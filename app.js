@@ -16,8 +16,8 @@ const images = [
         altText: "Aerial view of a five-star hotel in Mabul Island, located in Borneo, Sabah, Malaysia, sitting in the blue sea",
     },
     {
-        url: "https://images.unsplash.com/photo-1690667726912-84dbc2b455cd?q=80&w=2645&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "A photo of an orangutan, in Sabah, Malaysia casually hanging around on a rope"
+        url: "https://images.unsplash.com/photo-1713861627036-ede5909170af?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "A photo of a colourful temple at Batu Caves in Selangor, Malaysia,"
     },
     {
         url: "https://images.unsplash.com/photo-1585747477469-502ca39d8a08?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
