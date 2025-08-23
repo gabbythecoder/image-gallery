@@ -5,7 +5,7 @@
 const images = [
     {
         url: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "A photo of the Petronas Twin Towers in Kuala Lumpur, Malaysia at night brightly lit"
+        altText: "A photo of the Petronas Twin Towers in Kuala Lumpur, Malaysia at night brightly lit", 
     },
     {
         url: "https://images.unsplash.com/photo-1470087167738-6aa485ff65dc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -85,4 +85,43 @@ closeButton.addEventListener("click", function() {
 
 // todo - add keyboard button navigation 
 
+window.addEventListener("keydown", function (event) {
+    const popup = this.document.getElementById("large-image-popup");
+    if (popup.classList.contains("hidden")) 
+    return;
+
+    const largeImage = document.querySelector(".large-image");
+    if (!largeImage) 
+        return;
+
+    const currentIndex = images.findIndex (image => image.url === largeImage.src);
+    if (currentIndex === -1) 
+        return;
+
+    switch(event.key) {
+        case "Escape":
+            popup.classList.add("hidden");
+            document.getElementById("large-image-container").innerHTML = "";
+            break;
+
+        case "ArrowRight":
+            const nextIndex = (currentIndex + 1) % images.length;
+            updateLargeImage(nextIndex);
+            break;
+
+        case "ArrowLeft":
+            const prevIndex = (currentIndex - 1) % images.length;
+            updateLargeImage(prevIndex);
+            break;
+
+        default:
+            return;
+    }
+})
+
+function updateLargeImage(index) {
+    const largeImage = document.querySelector(".large-image");
+    largeImage.src = images[index].url;
+    largeImage.alt = images[index].altText;
+}
 
