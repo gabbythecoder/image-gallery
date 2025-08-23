@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="./app.js" defer></script>
+
+
+    <title>My Image Gallery</title>
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Image Gallery</h1>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Images</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <div class="main-container">
+        <section>
+            <div class="intro-container">
+                <h2>Discover Malaysia Through the Lens</h2>
+                    <p>Welcome to our image gallery—a visual journey through the heart and soul of Malaysia. From the vibrant cityscapes of Kuala Lumpur to the tranquil beaches of Langkawi, the lush rainforests of Borneo to the rich cultural heritage of Penang, our collection captures the breathtaking beauty and diversity of this remarkable country.</p>
+                    <p>Whether you're here to relive memories, plan your next adventure, or simply admire Malaysia’s natural and cultural wonders, each photo tells a story waiting to be explored.</p>
+                    <p>Take your time, wander through the gallery, and experience Malaysia—one picture at a time.</p>
+            </div>
+        </section>
+
+        <section class="photo-container">
+            <p>Click below for pictures!</p>
+            <div class="scroll-container"> 
+                <div id="thumbnail-container"></div>
+            </div>
+        </section>
+
+        <section>
+            <div id="large-image-popup" class="popup hidden">
+                <span class="close-btn">&times;</span>
+                <div id="large-image-container"></div>
+            </div>
+        </section>
+
+        <!-- <div class="extra-image-container">
+            <img src="https://images.unsplash.com/photo-1469130388952-72c427e96bb9?q=80&w=1746&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="A close-up photo of the Petronas Twin Towers in Kuala Lumpur, Malaysia">
+        </div> -->
+
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; </p>
+    </footer>
+</body>
+</html>

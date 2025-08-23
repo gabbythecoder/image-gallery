@@ -1,0 +1,88 @@
+// console.log("Hello world!"); testing
+
+// todo - need to store my image data
+
+const images = [
+    {
+        url: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "A photo of the Petronas Twin Towers in Kuala Lumpur, Malaysia at night brightly lit"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1470087167738-6aa485ff65dc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "A photo of the hills in Cameron Highlands, Malaysia, carpeted with the virbrant green of the tea plantation",
+    },
+    {
+        url: "https://images.unsplash.com/photo-1671364978178-002a8dc97362?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "Aerial view of a five-star hotel in Mabul Island, located in Borneo, Sabah, Malaysia, sitting in the blue sea",
+    },
+    {
+        url: "https://images.unsplash.com/photo-1690667726912-84dbc2b455cd?q=80&w=2645&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "A photo of an orangutan, in Sabah, Malaysia casually hanging around on a rope"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1585747477469-502ca39d8a08?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "A photo of a famous street art in Penang, Malaysia that shows a brother and sister on a swing"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1743328255564-393c83cc0881?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        altText: "A photo of the Darul Hana Bridge in Kuching, Malaysia across the Sarawak River"
+    }
+];
+
+// todo - need to create my thumbnail images
+
+function createThumbnails (images) {
+    const thumbnailImageContainer = document.getElementById("thumbnail-container");
+
+    // loop through our array
+    for (let i = 0; i < images.length; i++) {
+        const thumbnailImage = document.createElement("img");
+
+        thumbnailImage.src = images[i].url;
+        thumbnailImage.alt = images[i].altText;
+
+        thumbnailImage.className = "thumbnail";
+
+        //event listener 
+        thumbnailImage.addEventListener("click", createLargeImageHandler);
+
+        thumbnailImageContainer.appendChild(thumbnailImage);
+    }
+}
+
+// todo - need to create my large images
+
+function createLargeImageHandler (event) {
+    const largeImagePopup = document.getElementById("large-image-popup");
+    const largeImageContainer = document.getElementById("large-image-container");
+    largeImageContainer.innerHTML = "";
+
+    const largeImage = document.createElement("img");
+
+    // get the src and alt from the clicked thumbnail
+    const clickedThumbnail = event.target;
+    largeImage.src = clickedThumbnail.src;
+    largeImage.alt = clickedThumbnail.alt;
+
+    largeImage.className = "large-image";
+
+    largeImageContainer.appendChild(largeImage);
+    largeImagePopup.classList.remove("hidden");
+}
+
+createThumbnails(images);
+
+// todo - close the large image popup
+
+const closeButton = document.querySelector(".close-btn");
+closeButton.addEventListener("click", function() {
+    const largeImagePopup = document.getElementById("large-image-popup");
+    largeImagePopup.classList.add("hidden");
+
+    const largeImageContainer = document.getElementById("large-image-container");
+    largeImageContainer.innerHTML = "";
+})
+
+// todo - add keyboard button navigation 
+
+
