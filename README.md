@@ -46,7 +46,7 @@ I added a media query for my thumbnail container. When the device size shrinks, 
 
 All my images have appropriate alt text attributes. I also used a colour contrast checker to make sure the colours I used, especially in my header and footer have good contrast ratio for better accessibility. I have added srcset and when copying the image address, I know it works, however, I am not sure how to check it properly in the code. 
 
-I have added buttons for navigation when the large image pops up after clicking on the thumbnail. The code I have written for each prevButton and nextButton event listener is very repetitive but I am not so sure how to simplify it. If I could get your feedback on this, that would be great as I do want try to incorporate the DRY method to keep my codes clear and concise. 
+I have added buttons for navigation when the large image pops up after clicking on the thumbnail. The code I have written for each prevButton and nextButton event listener is very repetitive but I am not so sure how to simplify it. If I could get your feedback on this, that would be great as I do want to try to incorporate the DRY method as much as possible to keep my codes clear and concise. 
 
 I added keyboard navigation for when my large image pops up using the arrowkey left and right to navigate between the pictures in the pop up. I also added escape to toggle out of the pop up rather than clicking the 'x' in the top right corner. Both works to exit out of the pop up. This was the most difficult part I found when doing the assignment. 
 
