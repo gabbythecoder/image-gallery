@@ -17,6 +17,12 @@ This is built on VSCode using HTML, CSS and JavaScript.
 * 🏹 Add ARIA elements to improve accessibility, such as aria-label, aria-live, and other relevant attributes.
 * 🏹 Implement key bindings for buttons to enhance navigation, such as using arrow keys to switch between images. ✅
 
+## Resources 
+
+### Images 
+All images used in this project was from Unsplash. I have referenced them below:
+* 
+
 ## Reflection 
 
 Required
@@ -34,10 +40,13 @@ Optional (basically required)
 
 I have successfully completed the requirements for this project. I have to admit, this assignment really tested my coding abilities, particularly the JavaScript side of it. 
 
-I initially struggled with the createLargeImageHandler function. For some reason, I was not able to link my images array to the function, and the console kept coming up with errors. I added an event parameter in the function, and now everytime I click on a thumbnail, the large image showed up. I continuously console.log() throughout my JavaScript to debug my code, to ensure there was no error popping up. 
+I initially struggled with the createLargeImageHandler function. For some reason, I was not able to link my images array to the function, and the console kept coming up with errors. I added an event parameter in the function, and now everytime I click on a thumbnail, the large image showed up. I continuously console.log() throughout my JavaScript to debug my code, to ensure there was no new error popping up. 
 
-I added a media query for my thumbnail container. When the device size shrinks, it moves to the bottom of the page instead for better accessibility, especially for mobile devices. I particularly focused this assignment for mobile devices, but it is responsive and works for larger desktop screens. All my images have appropriate alt text attributes. I also used a colour contrast checker to make sure the colours I used, especially in my header and footer have good contrast ratio. 
+I added a media query for my thumbnail container. When the device size shrinks, it moves to the bottom of the page instead for better accessibility, especially for mobile devices. I particularly focused this assignment for mobile devices, but it is responsive and works for larger desktop screens. I know there are a lot of whitespace when viewing my webpage in desktop, but I didn't want to waste too much time trying to fill it up as I primarily wanted to focus on the JavaScript and making sure the website is responsive for other devices. 
+
+All my images have appropriate alt text attributes. I also used a colour contrast checker to make sure the colours I used, especially in my header and footer have good contrast ratio. 
 
 
 
-After numerous trial and errors, this assignment is completed. 
+
+Any feedback will be appreciated as I am always looking for ways to continuously improve. I hope you enjoy the image gallery I have created. 

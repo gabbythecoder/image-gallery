@@ -86,7 +86,7 @@ closeButton.addEventListener("click", function() {
 // todo - add keyboard button navigation 
 
 window.addEventListener("keydown", function (event) {
-    const popup = this.document.getElementById("large-image-popup");
+    const popup = document.getElementById("large-image-popup");
     if (popup.classList.contains("hidden")) 
     return;
 
@@ -110,7 +110,7 @@ window.addEventListener("keydown", function (event) {
             break;
 
         case "ArrowLeft":
-            const prevIndex = (currentIndex - 1) % images.length;
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
             updateLargeImage(prevIndex);
             break;
 
@@ -124,4 +124,7 @@ function updateLargeImage(index) {
     largeImage.src = images[index].url;
     largeImage.alt = images[index].altText;
 }
+
+// todo - add buttons when image popup for navigation ? 
+
 
