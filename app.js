@@ -5,27 +5,33 @@
 const images = [
     {
         url: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "A photo of the Petronas Twin Towers in Kuala Lumpur, Malaysia at night brightly lit", 
+        altText: "A photo of the Petronas Twin Towers in Kuala Lumpur, Malaysia at night brightly lit",
+        srcset: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400, https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800" 
     },
     {
         url: "https://images.unsplash.com/photo-1470087167738-6aa485ff65dc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         altText: "A photo of the hills in Cameron Highlands, Malaysia, carpeted with the virbrant green of the tea plantation",
+        srcset: "https://images.unsplash.com/photo-1470087167738-6aa485ff65dc?w=400, https://images.unsplash.com/photo-1470087167738-6aa485ff65dc?w=800",
     },
     {
         url: "https://images.unsplash.com/photo-1671364978178-002a8dc97362?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         altText: "Aerial view of a five-star hotel in Mabul Island, located in Borneo, Sabah, Malaysia, sitting in the blue sea",
+        srcset: "https://images.unsplash.com/photo-1671364978178-002a8dc97362?w=400, https://images.unsplash.com/photo-1671364978178-002a8dc97362?w=800",
     },
     {
         url: "https://images.unsplash.com/photo-1713861627036-ede5909170af?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "A photo of a colourful temple at Batu Caves in Selangor, Malaysia,"
+        altText: "A photo of a colourful temple at Batu Caves in Selangor, Malaysia,",
+        srcset: "https://images.unsplash.com/photo-1713861627036-ede5909170af?w=400, https://images.unsplash.com/photo-1713861627036-ede5909170af?w=800",
     },
     {
         url: "https://images.unsplash.com/photo-1585747477469-502ca39d8a08?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "A photo of a famous street art in Penang, Malaysia that shows a brother and sister on a swing"
+        altText: "A photo of a famous street art in Penang, Malaysia that shows a brother and sister on a swing",
+        srcset: "https://images.unsplash.com/photo-1585747477469-502ca39d8a08?w=400, https://images.unsplash.com/photo-1585747477469-502ca39d8a08?w=800",
     },
     {
         url: "https://images.unsplash.com/photo-1743328255564-393c83cc0881?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "A photo of the Darul Hana Bridge in Kuching, Malaysia across the Sarawak River"
+        altText: "A photo of the Darul Hana Bridge in Kuching, Malaysia across the Sarawak River",
+        srcset: "https://images.unsplash.com/photo-1743328255564-393c83cc0881?w=400, https://images.unsplash.com/photo-1743328255564-393c83cc0881?w=800",
     }
 ];
 
@@ -40,6 +46,10 @@ function createThumbnails (images) {
 
         thumbnailImage.src = images[i].url;
         thumbnailImage.alt = images[i].altText;
+        
+        if (images[i].srcset) {
+            thumbnailImage.setAttribute("srcset", images[i].srcset);
+        }
 
         thumbnailImage.className = "thumbnail";
 
@@ -63,6 +73,11 @@ function createLargeImageHandler (event) {
     const clickedThumbnail = event.target;
     largeImage.src = clickedThumbnail.src;
     largeImage.alt = clickedThumbnail.alt;
+    
+    const srcset = clickedThumbnail.getAttribute("data-srcset");
+    if (srcset) {
+        largeImage.srcset = srcset;
+    }
 
     largeImage.className = "large-image";
 
@@ -124,7 +139,5 @@ function updateLargeImage(index) {
     largeImage.src = images[index].url;
     largeImage.alt = images[index].altText;
 }
-
-// todo - add buttons when image popup for navigation ? 
 
 
