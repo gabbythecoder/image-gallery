@@ -171,6 +171,10 @@ a:hover {
     z-index: 100;
 }
 
+.close-btn:hover {
+    color: #ff69b4;
+}
+
 .prev-next-button {
     position: absolute;
     top: 50%;
