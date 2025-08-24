@@ -98,6 +98,45 @@ closeButton.addEventListener("click", function() {
     largeImageContainer.innerHTML = "";
 })
 
+// todo - adding functionality to prev-btn and next-btn
+
+function updateLargeImage(index) {
+    const largeImage = document.querySelector(".large-image");
+    largeImage.src = images[index].url;
+    largeImage.alt = images[index].altText;
+}
+
+const prevButton = document.querySelector(".prev-btn");
+const nextButton = document.querySelector(".next-btn");
+
+
+prevButton.addEventListener("click", function() {
+    const largeImage = document.querySelector(".large-image");
+    if (!largeImage) 
+        return;
+
+    const currentIndex = images.findIndex (image => image.url === largeImage.src);
+    if (currentIndex === -1) 
+        return;
+
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLargeImage(prevIndex);
+})
+
+nextButton.addEventListener("click", function() {
+    const largeImage = document.querySelector(".large-image");
+    if (!largeImage) 
+        return;
+
+    const currentIndex = images.findIndex (image => image.url === largeImage.src);
+    if (currentIndex === -1) 
+        return;
+
+    const nextIndex = (currentIndex + 1) % images.length;
+    updateLargeImage(nextIndex);
+
+})
+
 // todo - add keyboard button navigation 
 
 window.addEventListener("keydown", function (event) {
@@ -133,11 +172,5 @@ window.addEventListener("keydown", function (event) {
             return;
     }
 })
-
-function updateLargeImage(index) {
-    const largeImage = document.querySelector(".large-image");
-    largeImage.src = images[index].url;
-    largeImage.alt = images[index].altText;
-}
 
 
